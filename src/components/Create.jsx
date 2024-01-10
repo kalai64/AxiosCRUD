@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import Axiosblogs from './common/Axiosblogs';
 
 function Create() {
-  
+  // State variables to store form data
   let [name, setName] = useState('');
   let [username, setusername] = useState('');
   let [adrress, setAdrress] = useState('');
@@ -21,7 +21,7 @@ function Create() {
   
   let navigate = useNavigate();
 
-  
+  // Function to handle blog creation
   let handleCreate = async () => {
     try {
       
@@ -39,13 +39,14 @@ function Create() {
         navigate('/dashboard');
       }
     } catch (error) {
-      
+      // Handle any errors during the blog creation process
     }
   };
 
   return <>
+  {/* TopBar component for navigation */}
     <Topbar />
-
+      {/* Form for creating a new blog */}
       <div className='mt-4'>
         
         <Form className='mt-4'>
@@ -90,7 +91,7 @@ function Create() {
        
         <h2 className='text-center'>Preview</h2>
        
-        
+        {/* Display a preview of the created blog using Axiosblogs */}
         <Axiosblogs name={name} username={username} adrress={adrress} image={image} email={email} companyname={companyname} website={website} />
       </div>
     </>

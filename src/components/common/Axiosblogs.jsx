@@ -6,7 +6,7 @@ import { API_URL } from '../../App';
 function Axiosblogs({ name,username, adrress, image, email, companyname, website }) {
   return (
     <div className='mx-auto my-4 d-flex justify-content-center col-11 col-md-6 col-lg-4 mx-auto col-sm-10' style={{padding:'center'}}>
-      
+      {/* Bootstrap Card component */}
       <Card style={{background:'rgb(241,242,244)'}}>
         <Card.Title className='text-center fw-bold'>{`Name: ${name}`}</Card.Title>
        

@@ -7,15 +7,15 @@ import { toast } from 'react-toastify';
 
 
 function Home() {
-  
+  // State to store fetched data from the API
   let [axiosData, setAxiosData] = useState([]);
 
-  
+  // Effect hook to fetch data from the API on component mount
   useEffect(() => {
     getAxios();
   }, []);
 
-  
+  // Function to fetch data from the API
   let getAxios = async () => {
     try {
       
@@ -36,11 +36,12 @@ function Home() {
   };
 
   return <>
+  {/* TopBar component for navigation */}
       <Topbar />
 
       <div className="container">
       <div className="row">
-        
+        {/* Mapping through axiosData to render Axiosblogs for each blog */}
         {axiosData.map((e) => {
         
           return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TopBar from './TopBar';
+import Topbar from './TopBar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import Axiosblogs from './common/Axiosblogs';
 
 function Edit() {
-  
+  // State variables for form fields
   let [name, setName] = useState('');
   let [username, setusername] = useState('');
   let [address, setAddress] = useState('');
@@ -18,10 +18,10 @@ function Edit() {
   let [companyname, setCompanyName] = useState('');
   let [website, setWebsite] = useState('');
 
-  
+  // Hook from react-router-dom to get the id parameter from the URL
   let { id } = useParams();
 
-  
+  // Function to handle the edit operation
   let handleEdit = async () => {
     try {
       let data = { name,username, address, image, email, companyname, website, status: false };
@@ -36,7 +36,7 @@ function Edit() {
     }
   };
 
-  
+  // Function to fetch data for the specified id from the API
   let getAxiosID = async () => {
     try {
       let data = {};
@@ -56,16 +56,17 @@ function Edit() {
     }
   };
 
-  
+  // Hook to fetch data when the component mounts
   useEffect(() => {
     getAxiosID();
   }, []);
 
- 
+ // Navigate function from react-router-dom
   let navigate = useNavigate();
 
   return <>
-      <TopBar />
+  {/* TopBar component for navigation */}
+      <Topbar />
       <div className='mt-4'>
         <Form className='mt-4'>
           <Form.Group className='mb-3 text-center'>
@@ -110,7 +111,7 @@ function Edit() {
         <hr />
         <h2 className='text-center'>Preview</h2>
         <hr />
-        {/* Displaying a preview using the AxiosCard component */}
+        {/* Displaying a preview using the Axiosblogs component */}
         <Axiosblogs name={name} username={username} adrress={address} image={image} email={email} companyName={companyname} website={website} />
       </div>
     </>

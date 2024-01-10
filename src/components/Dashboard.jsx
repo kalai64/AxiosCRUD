@@ -8,19 +8,19 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 function Dashboard() {
-    
+    // Navigate hook for programmatic navigation
     let navigate = useNavigate();
 
-    
+    // State to store fetched data from the API
     let [axiosData, setAxiosData] = useState([]);
 
 
-    
+    // Effect hook to fetch data from the API on component mount
     useEffect(() => {
         getAxios();
     }, []);
 
-   
+   // Function to fetch data from the API
     let getAxios = async () => {
         try {
             
@@ -37,7 +37,7 @@ function Dashboard() {
         }
     };
 
-    
+    // Function to toggle the status of a blog
     let toggleBlog = async (e) => {
         try {
            
@@ -58,7 +58,7 @@ function Dashboard() {
         }
     };
 
-   
+   // Function to handle blog deletion
     let handleDelete = async (id) => {
         try {
            
@@ -76,6 +76,7 @@ function Dashboard() {
     };
 
     return <>  
+    {/* TopBar component for navigation */}
           <TopBar />
 
             <div>
@@ -97,7 +98,7 @@ function Dashboard() {
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        {/* Mapping through axiosData to render each blog */}
                         {axiosData.map((e, i) => {
                            
  
@@ -128,7 +129,7 @@ function Dashboard() {
                                         </label>
                                     </td>
                                     <td className='text-center'>
-                                       
+                                       {/* Edit and Delete buttons */}
                                         <Button variant="info" className='mt-2' onClick={() => navigate(`/edit/${e.id}`)}><b>Edit</b></Button>
                                         <br className="d-md-none" />
                                         <Button variant="danger" className='mt-2 mx-2' onClick={() => handleDelete(e.id)}><b>Delete</b></Button>

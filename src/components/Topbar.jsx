@@ -5,12 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
 
 function Topbar() {
-  
+  // Navigate hook for programmatic navigation
   let navigate = useNavigate();
 
   return <>
       <div >
-        
         <Navbar expand="lg" style={{background:'rgb(241,242,244)'}}>
           <Container>
             
