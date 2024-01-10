@@ -15,7 +15,7 @@ const Approutes = [
   {
     path: '/dashboard',
     exact: true,
-    element: <DashBoard />,
+    element: <Dashboard />,
   },
   {
     path: '/create',

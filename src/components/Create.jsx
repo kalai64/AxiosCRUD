@@ -25,7 +25,7 @@ function Create() {
   let handleCreate = async () => {
     try {
       
-      let data = { name,username, adrress, image, email, companyname, website, status: false };
+      let data = { name,username, adrress, image, email, companyname, website, status: true };
 
       
       let res = await axios.post(API_URL, data);
