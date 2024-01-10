@@ -2,7 +2,7 @@ import React from 'react';
 import Home from '../components/Home';
 import Dashboard from '../components/Dashboard';
 import Create from '../components/Create';
-import Edit from '../components/edit';
+import Edit from '../components/Edit';
 import { Navigate } from 'react-router-dom';
 
 //Array of Routers object
